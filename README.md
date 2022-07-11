@@ -6,10 +6,10 @@ A repository for playing with the adaptive mesh refinement MOOSE system. The toy
 `import openmc`
 
 # run openmc simulation
-python make_openmc_model.py
+`python make_openmc_model.py`
 
 # to test the mesh
-~/caridnal/cardinal-opt -i openmc.i --mesh-only
+`~/caridnal/cardinal-opt -i openmc.i --mesh-only`
 
 # run cardinl simulation using mpi paralellism and openmp parallelism
-mpiexec -np 4 ~/cardinal/cardinal-opt -i openmc.i --n-threads=20
+`mpiexec -np 4 ~/cardinal/cardinal-opt -i openmc.i --n-threads=20`
