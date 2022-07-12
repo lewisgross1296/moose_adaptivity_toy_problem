@@ -1,4 +1,11 @@
 # MOOSE adaptivity Toy Problem
-A repository for playing with the adaptive mesh refinement MOOSE system. The toy problem is one with a mesh that combines spherical and rectangular geometry and a heat source that is expected to have a sharp gradient at the interface of the sphere boundary.
+A repository for playing with the adaptive mesh refinement MOOSE system. The toy problem is one with a mesh that combines radial and rectangular geometry. The heat source is radial and cuts off at the heating radius, $`R_{h}`$, which is expected to cause a sharp temperature gradient at the interface. The heating source used is given by
+```math
+    q'''(r) =
+    \begin{cases}
+      Q_{0} \big( \frac{r}{R_{h}}\big)^{5} &\quad r \in [0,R_{h}] \\
+        0 &\quad else
+    \end{cases}
+```
 
 See the toy directory for the simple problem and the variation directory for the slight variation on the original configuration.
