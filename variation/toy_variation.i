@@ -1,5 +1,13 @@
 [Mesh]
-  # fill with the mesh
+  [ConcentricCircleMeshGenerator]
+    type = ConcentricCircleMeshGenerator
+    num_sectors = 2
+    radii = '1 1.05'
+    rings = '1 1 1'
+    has_outer_square = on
+    pitch = '4'
+    preserve_volumes = off
+  []
 []
 
 [Variables]
