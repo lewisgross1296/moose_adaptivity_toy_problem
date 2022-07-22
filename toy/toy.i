@@ -57,13 +57,13 @@ k_h = 100
   type = DirichletBC
   variable = temperature
   boundary = right
-  value = 300
+  value = 400
 []
 [top]
-  type = NeumannBC
+  type = DirichletBC
   variable = temperature
   boundary = top
-  value = 0
+  value = 200
 []
 [bottom]
   type = DirichletBC
