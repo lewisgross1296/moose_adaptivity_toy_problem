@@ -16,8 +16,12 @@ k_h = 100
 [Variables]
   # fill with the variables you are solving for
   [temperature]
+    # nodal
     order = FIRST
     family = LAGRANGE
+    # non nodal
+    # order = CONSTANT
+    # family = MONOMIAL
   []
 []
 
@@ -26,13 +30,20 @@ k_h = 100
   [heat_conduction]
     type = ADHeatConduction
     variable = temperature
+    block = '1 2'
   []
   [volumetric_heat_generation]
-    type = HeatSource
+    type = CoupledForce
+    v = power
     variable = temperature
-    block = 1
-    function = heat_source
+    block = '1'
   []
+  #[volumetric_heat_generation]
+  #  type = HeatSource
+  #  variable = temperature
+  #  block = 1
+  #  function = heat_source
+  #[]
 []
 
 [BCs]
@@ -40,7 +51,7 @@ k_h = 100
   type = NeumannBC
   variable = temperature
   boundary = left
-  value = 1
+  value = 0
 []
 [right]
   type = DirichletBC
@@ -52,9 +63,9 @@ k_h = 100
   type = NeumannBC
   variable = temperature
   boundary = top
-  value = 1
+  value = 0
 []
-[bottom ]
+[bottom]
   type = DirichletBC
   variable = temperature
   boundary = bottom
@@ -62,21 +73,29 @@ k_h = 100
 []
 []
 
-
 [Functions]
   # fill with a function to compute your specified volumetric heat source term
   [heat_source]
     type = ParsedFunction
-    value = '(sqrt(x*x+y*y)/${r_h})^5'
-  []
+    value = (sqrt(x*x+y*y)/${r_h})^5
+    []
 []
 
 [AuxVariables]
   # fill with an auxvariable to represent your volumetric heat source
+  [power]
+    order = FIRST
+    family = LAGRANGE
+  []
 []
 
 [AuxKernels]
   # fill with an auxkernel to set your volumetric heat source auxvariable to the function you want
+  [volumetric_heat_generation]
+    type = FunctionAux
+    variable = power
+    function = heat_source
+  []
 []
 
 [Materials]
