@@ -91,10 +91,11 @@ k_h = 100
 
 [AuxKernels]
   # fill with an auxkernel to set your volumetric heat source auxvariable to the function you want
-  [volumetric_heat_generation]
+  [volumetric_heat_gegneration]
     type = FunctionAux
     variable = power
     function = heat_source
+    block = 1
   []
 []
 
