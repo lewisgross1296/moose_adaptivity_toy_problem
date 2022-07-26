@@ -4,7 +4,7 @@ k_h = 100
 [Mesh]
   [ConcentricCircleMeshGenerator]
     type = ConcentricCircleMeshGenerator
-    num_sectors = 2
+    num_sectors = 10
     radii = '${r_h} ${fparse 1.05*r_h}'
     rings = '1 1 1'
     has_outer_square = on
