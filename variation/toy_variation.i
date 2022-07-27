@@ -112,6 +112,11 @@ k_h = 100
   []
 []
 
+[Adaptivity]
+
+[]
+
+
 [Executioner]
   # fill with the executioner
   type = Steady

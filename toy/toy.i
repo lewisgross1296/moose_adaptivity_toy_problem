@@ -38,12 +38,6 @@ k_h = 100
     variable = temperature
     block = '1'
   []
-  #[volumetric_heat_generation]
-  #  type = HeatSource
-  #  variable = temperature
-  #  block = 1
-  #  function = heat_source
-  #[]
 []
 
 [BCs]
@@ -110,6 +104,10 @@ k_h = 100
     thermal_conductivity = ${fparse 1.5*k_h}
     block = '2'
   []
+[]
+
+[Adaptivity]
+
 []
 
 [Executioner]
