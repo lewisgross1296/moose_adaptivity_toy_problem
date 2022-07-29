@@ -114,6 +114,7 @@ k_h = 100
 
 [Adaptivity]
   steps = 5
+  max_h_level = 4
   []
   []
 []
