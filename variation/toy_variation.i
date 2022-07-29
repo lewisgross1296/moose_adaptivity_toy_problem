@@ -113,7 +113,9 @@ k_h = 100
 []
 
 [Adaptivity]
-
+  steps = 5
+  []
+  []
 []
 
 
