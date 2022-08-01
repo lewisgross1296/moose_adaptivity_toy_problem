@@ -71,7 +71,7 @@ k_h = 100
   # fill with a function to compute your specified volumetric heat source term
   [heat_source]
     type = ParsedFunction
-    value = (sqrt(x*x+y*y)/${r_h})^5
+    value = (2*sqrt(x*x+y*y)/${r_h})^5
     []
 []
 
@@ -113,7 +113,7 @@ k_h = 100
 []
 
 [Adaptivity]
-  steps = 5
+  steps = 4
   max_h_level = 4
   marker = error_fraction_marker
   [Indicators]
@@ -125,7 +125,7 @@ k_h = 100
   [Markers]
     [error_fraction_marker]
       type = ErrorFractionMarker
-      coarsen = 0.15
+      coarsen = 0.3
       refine = 0.3
       indicator = grad_jump_temp
     []
