@@ -51,7 +51,7 @@ k_h = 100
   type = DirichletBC
   variable = temperature
   boundary = right
-  value = 400
+  value = 1000
 []
 [top]
   type = DirichletBC
@@ -63,7 +63,7 @@ k_h = 100
   type = DirichletBC
   variable = temperature
   boundary = bottom
-  value = 300
+  value = 600
 []
 []
 
