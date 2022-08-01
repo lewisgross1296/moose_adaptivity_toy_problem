@@ -109,7 +109,20 @@ k_h = 100
 [Adaptivity]
   steps = 5
   max_h_level = 4
+  marker = error_fraction_marker
+  [Indicators]
+    [grad_jump_temp]
+      type = GradientJumpIndicator
+      variable = temperature
+    []
   []
+  [Markers]
+    [error_fraction_marker]
+      type = ErrorFractionMarker
+      coarsen = 0.15
+      refine = 0.3
+      indicator = grad_jump_temp
+    []
   []
 []
 
