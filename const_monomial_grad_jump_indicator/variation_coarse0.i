@@ -71,7 +71,7 @@ k_h = 100
   # fill with a function to compute your specified volumetric heat source term
   [heat_source]
     type = ParsedFunction
-    value = (2*sqrt(x*x+y*y)/${r_h})^5
+    value = (3*sqrt(x*x+y*y)/${r_h})^5
     []
 []
 
