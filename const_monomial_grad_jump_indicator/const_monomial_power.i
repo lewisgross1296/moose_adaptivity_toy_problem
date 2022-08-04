@@ -17,8 +17,8 @@ k_h = 100
   # fill with the variables you are solving for
   [temperature]
     # non nodal
-    order = CONSTANT
-    family = MONOMIAL
+    order = FIRST
+    family = LAGRANGE
   []
 []
 
@@ -75,8 +75,8 @@ k_h = 100
 [AuxVariables]
   # fill with an auxvariable to represent your volumetric heat source
   [power]
-    order = FIRST
-    family = LAGRANGE
+    order = CONSTANT
+    family = MONOMIAL
   []
 []
 
