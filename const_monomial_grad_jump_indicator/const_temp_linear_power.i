@@ -17,8 +17,8 @@ k_h = 100
   # fill with the variables you are solving for
   [temperature]
     # non nodal
-    # order = CONSTANT
-    # family = MONOMIAL
+    order = CONSTANT
+    family = MONOMIAL
   []
 []
 
