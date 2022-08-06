@@ -116,6 +116,8 @@ k_h = 100
   steps = 4
   max_h_level = 4
   marker = error_fraction_marker
+  cycles_per_step = 2
+  # recompute_markers_during_cycles = true
   [Indicators]
     [grad_jump_temp]
       type = GradientJumpIndicator
