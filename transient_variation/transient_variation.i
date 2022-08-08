@@ -114,10 +114,10 @@ k_h = 100
 
 [Adaptivity]
   steps = 4
-  max_h_level = 4
+  max_h_level = 3
   marker = error_fraction_marker
-  cycles_per_step = 2
-  # recompute_markers_during_cycles = true
+  cycles_per_step = 4
+  recompute_markers_during_cycles = true
   [Indicators]
     [grad_jump_temp]
       type = GradientJumpIndicator
